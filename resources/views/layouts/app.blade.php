@@ -16,7 +16,8 @@
 
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+{{--    <link rel="stylesheet" type="text/css" href="slick/slick.css">--}}
+    <link href="css/splide.min.css" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
 </head>
@@ -65,7 +66,8 @@
 {{--    Scripts--}}
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
+{{--<script type="text/javascript" src="slick/slick.min.js"></script>--}}
+<script type="text/javascript" src="js/splide.min.js"></script>
 
 
 @yield('script')
