@@ -1,27 +1,47 @@
-@extends('layouts.app')
+<section>
 
-@section('content')
-    <div class="flex items-center">
-        <div class="md:w-1/2 md:mx-auto">
+    <div class="bg-gray-800 px-12 py-24 flex items-center">
 
-            @if (session('status'))
-                <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
+        <div class="bg-black md:block w-3/12"></div>
+        <div class="flex-1 relative">
+            <h2 class="mb-8 uppercase text-white text-2xl font-bold tracking-widest">My work</h2>
+            <p class="font-serif text-gray-500 text-base md:text-xl max-w-2xl leading-loose">Lorem ipsum dolor sit
+                amet, consectetur adipisicing elit. Accusamus adipisci aut eos iusto nemo sint?</p>
 
-            <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
-
-                <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
-                    Dashboard
-                </div>
-
-                <div class="w-full p-6">
-                    <p class="text-gray-700">
-                        You are logged in!
-                    </p>
-                </div>
-            </div>
+            <span class="absolute top-0 left-0 w-4 h-full bg-gray-300 -ml-20"></span>
         </div>
+
     </div>
-@endsection
+
+
+    <!-- SPACER / -->
+    <div class="w-full h-24 border-black bg-white flex justify-end">
+        <div class="w-64 bg-gray-800"></div>
+    </div>
+    <!-- / SPACER -->
+
+    <div class="w-full flex items-center justify-start relative">
+        <div class="p-10 bg-black md:w-3/12"></div>
+
+        <div class="w-full md:w-8/12 bg-gray-100 py-12 relative flex">
+
+            <a href="#" class="block relative z-10 bg-black h-full w-full px-12 md:px-6 md:w-6/12 py-24 md:-ml-24">
+                <h3 class="mb-2 uppercase text-white text-3xl font-bold tracking-widest">The Portfolio</h3>
+                <p class="text-lg md:text-xl font-serif text-gray-300">Completed Builds</p>
+            </a>
+
+            <img src="/img/banner2-02.png"
+                 class="absolute top-0 left-0 block w-full h-full object-cover"/>
+
+        </div>
+
+        <div class="w-1/12 absolute top-0 right-0 h-full bg-gray-800"></div>
+    </div>
+
+
+    <!-- SPACER / -->
+    <div class="w-full h-12 border-black bg-white flex justify-end">
+        <div class="w-64 bg-gray-800"></div>
+    </div>
+    <!-- / SPACER -->
+</section>

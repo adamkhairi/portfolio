@@ -21,6 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+// / Certificate / Formation
 Route::get('/formations', function () {
     return view('formation.formations');
 })->name('formation');
@@ -32,4 +35,17 @@ Route::resource('/formations', 'FormationsController')->names([
     'update' => 'formation.update',
     'edit' => 'formation.edit',
     'destroy' => 'formation.destroy'
+]);
+
+// / Work
+Route::get('/works',function (){
+    return view('work.works');
+})->name('work');
+
+Route::resource('/works', 'WorksController')->names([
+    'index' => 'work.index',
+    'create' => 'work.create',
+    'update' => 'work.update',
+    'edit' => 'work.edit',
+    'destroy' => 'work.destroy'
 ]);
