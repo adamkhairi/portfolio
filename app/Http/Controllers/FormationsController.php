@@ -59,19 +59,7 @@ class FormationsController extends Controller
         return redirect('index')->with('success', 'Formation Added Successfuly');
 
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param $id
-     * @return Application|Factory|Response|View
-     */
-    public function show($id)
-    {
-        $formation = Formation::findOrFail($id);
-        return view('formation.show-form', compact('formation'));
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
