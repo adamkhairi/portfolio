@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Work;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 class WorksController extends Controller
@@ -19,72 +22,123 @@ class WorksController extends Controller
     public function index()
     {
         $works = Work::all();
-        return view('work.works', compact('works'));
+        $topWorks = Work::orderBy('rating', 'DESC')->take(4)->get();
+
+        return view('work.works', compact('works', 'topWorks'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return void
+     * @return Application|Factory|View|void
      */
     public function create()
     {
-        //
+        return view('work.add-work');
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @param Request $request
+     * @return Application|RedirectResponse|Response|Redirector
+     * @throws ValidationException
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|string|max=200',
+            'img' => 'required',
+            'description' => 'required',
+            'rating' => 'required'
+        ]);
+        if ($request->hasFile('img')) {
+            $img = $request->file('img');
+            $name = $img->getClientOriginalName();
+            $img->move(public_path() . '/img/', $name);
+            $name = '/img/' . $name;
+
+        }
+
+        $work = new Work();
+        $work->name = $request->name;
+        $work->img = $name;
+        $work->description = $request->descriptione;
+        $work->rating = $request->rating;
+
+        $work->save();
+
+        return redirect('index')->with('Success', 'Work has been added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Work  $work
-     * @return Response
+     * @param $id
+     * @return Application|Factory|Response|View
      */
-    public function show(Work $work)
+    public function show($id)
     {
-        //
+        $work = Work::findOrFail($id);
+        return view('work.show-work', compact('work'));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Work  $work
-     * @return Response
+     * @param $id
+     * @return Application|Factory|Response|View
      */
-    public function edit(Work $work)
+    public function edit($id)
     {
-        //
+        $work = Work::findOrFail($id);
+        return view('work.update-sec', compact('work'));
+
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Work  $work
-     * @return Response
+     * @param Request $request
+     * @param $id
+     * @return RedirectResponse
      */
-    public function update(Request $request, Work $work)
+    public function update(Request $request, $id)
     {
-        //
+        $work = Work::findOrFail($id);
+
+        if ($request->hasFile('img')) {
+            $img = $request->file('img');
+            $name = $img->getClientOriginalName();
+            $img->move(public_path() . '/img/', $name);
+            $name = '/img/' . $name;
+
+        }
+
+//        $work = new Work();
+        $work->name = $request->name;
+        $work->img = $name;
+        $work->description = $request->descriptione;
+        $work->rating = $request->rating;
+
+        $work->save();
+        return redirect()->back()->with('success', 'Work updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Work  $work
-     * @return Response
+     * @param $id
+     * @return Application|RedirectResponse|Response|Redirector
      */
-    public function destroy(Work $work)
+    public function destroy($id)
     {
-        //
+        $work = Work::findOrFail($id);
+
+        $work->delete();
+
+        return redirect('work.works')->with('success', 'Work has been Deleted');
     }
 }

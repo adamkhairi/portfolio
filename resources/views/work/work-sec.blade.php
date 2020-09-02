@@ -19,24 +19,27 @@
         <div class="w-64 bg-gray-800"></div>
     </div>
     <!-- / SPACER -->
+@foreach($topWorks as $work)
 
-    <div class="w-full flex items-center justify-start relative">
-        <div class="p-10 bg-black md:w-3/12"></div>
+        <div class="w-full flex items-center justify-start relative">
+            <div class="p-10 bg-black md:w-3/12"></div>
 
-        <div class="w-full md:w-8/12 bg-gray-100 py-12 relative flex">
+            <div class="w-full md:w-8/12 bg-gray-100 py-12 relative flex">
 
-            <a href="#" class="block relative z-10 bg-black h-full w-full px-12 md:px-6 md:w-6/12 py-24 md:-ml-24">
-                <h3 class="mb-2 uppercase text-white text-3xl font-bold tracking-widest">The Portfolio</h3>
-                <p class="text-lg md:text-xl font-serif text-gray-300">Completed Builds</p>
-            </a>
+                <a href="#" class="block relative z-10 bg-black h-full w-full px-12 md:px-6 md:w-6/12 py-24 md:-ml-24">
+                    <h3 class="mb-2 uppercase text-white text-3xl font-bold tracking-widest">{{ $work->name }}</h3>
+                    <p class="text-lg md:text-xl font-serif text-gray-300">description</p>
+                </a>
 
-            <img src="/img/banner2-02.png"
-                 class="absolute top-0 left-0 block w-full h-full object-cover"/>
+                <img src="/img/banner2-02.png"
+                     class="absolute top-0 left-0 block w-full h-full object-cover"/>
 
+            </div>
+
+            <div class="w-1/12 absolute top-0 right-0 h-full bg-gray-800"></div>
         </div>
+    @endforeach
 
-        <div class="w-1/12 absolute top-0 right-0 h-full bg-gray-800"></div>
-    </div>
 
 
     <!-- SPACER / -->

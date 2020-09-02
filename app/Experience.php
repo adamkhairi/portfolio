@@ -9,4 +9,10 @@ class Experience extends Model
     protected $fillable = [
         'company','logo', 'post', 'description'
     ];
+
+    public function user()
+    {
+        return $this->beLongsTo('App\User');
+
+    }
 }

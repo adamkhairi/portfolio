@@ -16,8 +16,8 @@
         <a href="{{route('index')}}" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Home</a>
         <a href="{{route('index')}}#about" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">About</a>
         <a href="{{ url('/formations') }}" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Certificats</a>
-        <a href="" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Experience</a>
+        <a href="{{route('index')}}#experiences" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Experience</a>
         <a href="{{ url('/works') }}" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Work</a>
-        <a href="" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Contact</a>
+        <a href="{{ url('/contact') }}" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Contact</a>
     </div>
 </div>

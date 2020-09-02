@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Formation extends Model
 {
     protected $fillable = [
-        'certificate', 'obtained', 'description'
+        'certificate','school', 'obtained', 'description'
     ];
+
+    public function user()
+    {
+        return $this->beLongsTo('App\User');
+
+    }
+
 }

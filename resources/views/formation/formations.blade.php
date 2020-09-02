@@ -7,7 +7,7 @@
 
 {{--/ Formations--}}
 @section('content1')
-    <section class="py-6 w-full h-screen">
+    <section class="py-6 w-full min-h-screen">
 
         <div class="py-16">
             <h1 class="text-5xl pt-12 text-center text-white font-extrabold"> Certificats </h1>

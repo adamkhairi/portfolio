@@ -59,7 +59,7 @@ class FormationsController extends Controller
         return redirect('index')->with('success', 'Formation Added Successfuly');
 
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
