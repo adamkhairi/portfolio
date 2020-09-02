@@ -3,83 +3,119 @@
 namespace App\Http\Controllers;
 
 use App\Formation;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
+use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 
 class FormationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|Response|View
      */
     public function index()
     {
-        //
+        $formations = Formation::all();
+        return view('formation.formations', compact('formations'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|Response|View
      */
     public function create()
     {
-        //
+        return view('formation.add-form');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Application|RedirectResponse|Redirector|void
+     * @throws ValidationException
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'certificate' => 'required',
+            'obtained' => 'required',
+            'description' => 'required',
+        ]);
+
+        $formation = new Formation();
+        $formation->certificate = $request->certificate;
+        $formation->obtained = $request->obtained;
+        $formation->description = $request->description;
+
+        $formation->save();
+        return redirect('index')->with('success', 'Formation Added Successfuly');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Formation  $formation
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return Application|Factory|Response|View
      */
-    public function show(Formation $formation)
+    public function show($id)
     {
-        //
+        $formation = Formation::findOrFail($id);
+        return view('formation.show-form', compact('formation'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Formation  $formation
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return Application|Factory|Response|View
      */
-    public function edit(Formation $formation)
+    public function edit($id)
     {
-        //
+        $formation = Formation::findOrFail($id);
+        return view('formation.update-form', compact('formation'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Formation  $formation
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param $id
+     * @return RedirectResponse
      */
-    public function update(Request $request, Formation $formation)
+    public function update(Request $request, $id)
     {
-        //
+        $formation = Formation::findOrFail($id);
+
+        $formation->certificate = $request->certificate;
+        $formation->obtained = $request->obtained;
+        $formation->description = $request->description;
+
+        $formation->save();
+
+        return redirect()->back()->with('success', 'Formation has been updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Formation  $formation
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return Application|RedirectResponse|Response|Redirector
      */
-    public function destroy(Formation $formation)
+    public function destroy($id)
     {
-        //
+        $formation = Formation::findOrFail($id);
+
+        $formation->delete();
+
+        return redirect('formations.index')->with('success', 'Formation deleted successfully');
     }
 }

@@ -15,6 +15,9 @@ class CreateFormationsTable extends Migration
     {
         Schema::create('formations', function (Blueprint $table) {
             $table->id();
+            $table->string('certificate');
+            $table->date('obtained');
+            $table->string('description');
             $table->timestamps();
         });
     }

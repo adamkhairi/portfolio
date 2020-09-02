@@ -1,67 +1,10 @@
 @extends('layouts.app')
 @section('header')
-    <nav class="flex justify-between items-center p-2 px-16 sticky top-0">
-        <div class="flex justify-center items-center">
-            <img src="/img/user-profile.png" width="50" alt="">
-            <h5 class="font-bold pl-4">Adam Khairi</h5>
-        </div>
-        <div id="menu-toggle">
-            <i class="fas fa-bars text-gray-300 text-3xl "></i>
-        </div>
-    </nav>
-    <div id="menu"
-         class="hidden z-50 opacity-75 text-black bg-gray-300 fixed top-0 h-screen w-full flex justify-center items-center">
-        <div class="flex flex-col items-center font-extrabold text-4xl justify-center">
-            <a href="{{route('index')}}" class="py-3 rounded hover:bg-black hover:text-white px-20">Home</a>
-            <a href="" class="py-3 rounded hover:bg-black hover:text-white px-20">About</a>
-            <a href="" class="py-3 rounded hover:bg-black hover:text-white px-20">Experience</a>
-            <a href="" class="py-3 rounded hover:bg-black hover:text-white px-20">Study</a>
-            <a href="" class="py-3 rounded hover:bg-black hover:text-white px-20">Work</a>
-            <a href="" class="py-3 rounded hover:bg-black hover:text-white px-20">Contact</a>
-        </div>
-    </div>
-
+    @include('layouts.navbar')
 @endsection
 @section('content1')
-    {{--    <section>--}}
-    {{--        <div class="one-time text-gray-300  text-center">--}}
 
-
-    {{--            <div class="h-screen w-full z-10 p-10 flex-col justify-center items-center">--}}
-    {{--                <div class="pt-20">--}}
-    {{--                    <h1 class="p-2">HELLO</h1>--}}
-    {{--                    <h1 class=""> I'M</h1>--}}
-    {{--                </div>--}}
-    {{--                <div class="p-5">--}}
-    {{--                    <h1 class="font-bold text-5xl text-white">--}}
-    {{--                        <strong>ADAM KHAIRI</strong>--}}
-    {{--                    </h1>--}}
-    {{--                </div>--}}
-    {{--            </div>--}}
-
-
-    {{--            <div class="h-screen w-full p-10 z-10 flex-col justify-center items-center">--}}
-    {{--                <div class="pt-20">--}}
-
-    {{--                    <h1>I'M A</h1>--}}
-    {{--                </div>--}}
-    {{--                <div class="p-5">--}}
-
-    {{--                    <h1 class="font-bold text-3xl text-white">--}}
-
-    {{--                        <strong>WEB DEVELOPER</strong>--}}
-    {{--                    </h1>--}}
-
-    {{--                    <i class="fas fa-file-code text-white text-5xl p-5"></i>--}}
-    {{--                </div>--}}
-    {{--            </div>--}}
-    {{--            <div class="h-screen w-full p-10 flex-col justify-center items-center">3</div>--}}
-    {{--            <div class="h-screen w-full p-10 flex-col justify-center items-center">4</div>--}}
-    {{--        </div>--}}
-    {{--    </section>--}}
-
-
-    <section class="px-4">
+    <section class="p-4">
         <div class="splide ">
             <div class="splide__track">
                 <ul class="splide__list ">
@@ -106,10 +49,8 @@
 
             <div class="bg-black md:block w-3/12"></div>
             <div class="flex-1 relative">
-                <h2 class="mb-8 uppercase text-white text-2xl font-bold tracking-widest">Our Expertise</h2>
-                <p class="font-serif text-gray-500 text-base md:text-xl max-w-2xl leading-loose">RJ Investments brings
-                    luxury living to the rental market through bespoke renovations, at affordable prices with quality
-                    property management.</p>
+                <h2 class="mb-8 uppercase text-white text-2xl font-bold tracking-widest">My work</h2>
+                <p class="font-serif text-gray-500 text-base md:text-xl max-w-2xl leading-loose">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aut eos iusto nemo sint?</p>
 
                 <span class="absolute top-0 left-0 w-4 h-full bg-gray-300 -ml-20"></span>
             </div>
@@ -148,11 +89,65 @@
         </div>
         <!-- / SPACER -->
 
+        <!--  certificate -->
 
+        <!--  SPACER -->
 
+        <div class="bg-gray-800 px-12 py-24 flex items-center">
+
+            <div class="bg-black md:block w-3/12"></div>
+            <div class="flex-1 relative">
+                <h2 class="mb-8 uppercase text-white text-2xl font-bold tracking-widest">My Certificate</h2>
+                <p class="font-serif text-gray-500 text-base md:text-xl max-w-2xl leading-loose">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aut eos iusto nemo sint?</p>
+
+                <span class="absolute top-0 left-0 w-4 h-full bg-gray-300 -ml-20"></span>
+            </div>
+
+        </div>
+
+        <!-- / SPACER -->
+
+        <!--  certificate -->
+
+        <!-- / SPACER -->
+
+        <div class="">
+
+            <div class="mx-auto max-w-5xl flex flex-wrap justify-center items-center text-center py-20">
+
+                <a href="#" class="w-full md:w-1/3 px-12">
+                    <h4 class="mb-2 uppercase text-gray-100 text-lg font-bold tracking-widest">Investment Options</h4>
+                    <p class="text-sm md:text-lg font-serif text-gray-400">Get More</p>
+                </a>
+
+                <a href="#" class="w-full md:w-1/3 py-12 px-12 md:border-l-4 md:border-r-4 md:border-gray-700">
+                    <h4 class="mb-2 uppercase text-gray-100 text-lg font-bold tracking-widest">Accomodation</h4>
+                    <p class="text-sm md:text-lg font-serif text-gray-400">Future Tenants</p>
+                </a>
+
+                <a href="#" class="w-full md:w-1/3 px-12">
+                    <h4 class="mb-2 uppercase text-gray-100 text-lg font-bold tracking-widest">Land Development</h4>
+                    <p class="text-sm md:text-lg font-serif text-gray-400">The Homes</p>
+                </a>
+
+            </div>
+
+        </div>
 
     </section>
 @endsection
+<!-- / certificate -->
+
+<!-- / SPACER -->
+
+
+<!-- FOOTER / -->
+@section('footer')
+    @include('layouts.footer')
+@endsection
+<!-- / FOOTER -->
+
+<!-- / Scripts -->
 @section('script')
     <script src="{{ asset('js/navBar.js') }}" defer></script>
     <script>
