@@ -4,7 +4,7 @@
 @endsection
 @section('content1')
 
-    <section class="p-4">
+    <section id="about" class="p-4">
         <div class="splide ">
             <div class="splide__track">
                 <ul class="splide__list ">
@@ -149,26 +149,10 @@
 
 <!-- / Scripts -->
 @section('script')
-    <script src="{{ asset('js/navBar.js') }}" defer></script>
     <script>
-
         document.addEventListener('DOMContentLoaded', function () {
             new Splide('.splide').mount();
-        });
-
-        // $(document).ready(function () {
-        //     $('.one-time').slick({
-        //         dots: false,
-        //         arrows: false,
-        //         fade: true,
-        //         infinite: true,
-        //         speed: 300,
-        //         slidesToShow: 1,
-        //         adaptiveHeight: true
-        //     })
-        // });
-
-
+        })
     </script>
 @endsection
 

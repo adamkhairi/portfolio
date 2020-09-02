@@ -69,6 +69,9 @@
 {{--<script type="text/javascript" src="slick/slick.min.js"></script>--}}
 <script type="text/javascript" src="js/splide.min.js"></script>
 
+    <script src="{{ asset('js/navBar.js') }}" defer></script>
+
+
 
 @yield('script')
 </body>

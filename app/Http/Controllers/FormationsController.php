@@ -12,7 +12,7 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
-class FormationController extends Controller
+class FormationsController extends Controller
 {
     /**
      * Display a listing of the resource.

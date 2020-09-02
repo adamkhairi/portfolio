@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/formations', function () {
+    return view('formation.formations');
+})->name('formation');
+
+
+Route::resource('/formations', 'FormationsController')->names([
+    'index' => 'formation.index',
+    'create' => 'formation.create',
+    'update' => 'formation.update',
+    'edit' => 'formation.edit',
+    'destroy' => 'formation.destroy'
+]);

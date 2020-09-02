@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Experience;
 use Illuminate\Http\Request;
 
-class ExperienceController extends Controller
+class ExperiencesController extends Controller
 {
     /**
      * Display a listing of the resource.
