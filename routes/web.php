@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $topWorks = Work::orderBy('rating', 'DESC')->take(3)->get();
-
     return view('welcome', compact('topWorks'));
 })->name('index');
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -43,7 +45,7 @@ Route::resource('/formations', 'FormationsController')->names([
 // / Work
 Route::get('/works',function (){
     return view('work.works');
-})->name('work');
+})->name('works');
 
 Route::resource('/works', 'WorksController')->names([
     'index' => 'work.index',

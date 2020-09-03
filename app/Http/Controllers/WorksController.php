@@ -21,11 +21,19 @@ class WorksController extends Controller
      */
     public function index()
     {
-        $works = Work::all();
-        $topWorks = Work::orderBy('rating', 'DESC')->take(4)->get();
+//        $works = Work::all();
+//        $topWorks = Work::orderBy('rating', 'DESC')->take(4)->get();
+//
+//        return view('work.works', compact('works', 'topWorks'));
 
-        return view('work.works', compact('works', 'topWorks'));
+        $works = Work::latest()->paginate(6);
+        return view('work.works', compact('works'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -51,7 +59,8 @@ class WorksController extends Controller
             'name' => 'required|string|max=200',
             'img' => 'required',
             'description' => 'required',
-            'rating' => 'required'
+            'rating' => 'required',
+            'category_id' => 'nullable'
         ]);
         if ($request->hasFile('img')) {
             $img = $request->file('img');
