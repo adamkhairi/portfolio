@@ -39,17 +39,65 @@
                     class="mx-4 mb-2 font-bold hover:opacity-75 w-24 h-10 px-4 py-2 bg-gray-200 text-black rounded-lg">
                 Add
             </button>
-            <button type="button"
-                    class="mx-4 mb-2 font-bold hover:opacity-75 w-24 h-10 px-4 py-2 bg-gray-200 text-black rounded-lg">
-                Edit
-            </button>
-            <button type="button"
-                    class="mx-4 mb-2 font-bold hover:opacity-75 w-24 h-10 px-4 py-2 bg-gray-200 text-black rounded-lg">
-                Delete
-            </button>
         </div>
         <div id="add-form" class="hidden">
             @include('formation.add-form')
+
+        </div>
+        <div>
+            <div class="w-2/3 mx-auto">
+                <div class="bg-white text-black shadow-md rounded my-6">
+                    <table class="text-left w-full border-collapse">
+                        <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
+                        <thead>
+                        <tr>
+                            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">
+                                Certificate
+                            </th>
+                            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">
+                                School
+                            </th>
+                            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">
+                                Date
+                            </th>
+                            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">
+                                Description
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($formations as $formation)
+                            <tr class="hover:bg-grey-lighter">
+                                <td class="py-4 px-6 border-b border-grey-light">
+                                    {{ $formation->certificate }}
+                                </td>
+                                <td class="py-4 px-6 border-b border-grey-light">
+                                    {{ $formation->school }}
+
+                                </td>
+                                <td class="py-4 px-6 border-b border-grey-light">
+                                    {{ $formation->obtained }}
+
+                                </td>
+                                <td class="py-4 px-6 border-b border-grey-light">
+                                    {{ $formation->description }}
+
+                                </td>
+                                <td class="py-4 px-6 border-b border-grey-light">
+                                    <a href="#"
+                                       class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">Edit</a>
+                                    <a href="#"
+                                       class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">View</a>
+                                </td>
+                            </tr>
+                        @endforeach
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
     </section>
 @endsection
@@ -66,29 +114,23 @@
                     class="mx-4 mb-2 font-bold hover:opacity-75 w-24 h-10 px-4 py-2 bg-gray-200 text-black rounded-lg">
                 Add
             </button>
-            <button type="button"
-                    class="mx-4 mb-2 font-bold hover:opacity-75 w-24 h-10 px-4 py-2 bg-gray-200 text-black rounded-lg">
-                Edit
-            </button>
-            <button type="button"
-                    class="mx-4 mb-2 font-bold hover:opacity-75 w-24 h-10 px-4 py-2 bg-gray-200 text-black rounded-lg">
-                Delete
-            </button>
         </div>
         {{--        ADD SEC--}}
         <div id="add-work" class="hidden">
             @include('work.add-work')
         </div>
         {{--        EDIT SEC--}}
-        <div id="edit-work" class="hidden">
-            @include('work.update-sec')
-        </div>
-        {{--        DELETE SEC--}}
-        <div id="add-work" class="hidden">
-{{--            TODO Tables of works--}}
-        </div>
+        {{--        <div id="edit-work" class="hidden">--}}
+        {{--            @include('work.update-sec')--}}
+        {{--        </div>--}}
+        {{--        --}}{{--        DELETE SEC--}}
+        {{--        <div id="add-work" class="hidden">--}}
+        {{--            TODO Tables of works--}}
+        {{--        </div>--}}
 
     </section>
+
+
 @endsection
 
 {{--/ Sec-2 // Portfolio --}}

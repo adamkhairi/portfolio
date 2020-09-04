@@ -108,9 +108,5 @@ class FormationsController extends Controller
 
         return redirect('formations.index')->with('success', 'Formation deleted successfully');
     }
-    public function adminIndex()
-    {
-        $formations = Formation::all();
-        return view('admin.dashboard', compact('formations'));
-    }
+
 }

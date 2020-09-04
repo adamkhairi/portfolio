@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('home');
 
 
 //   ADMIN
@@ -35,6 +35,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', function () {
     return view('admin.dashboard');
 });
+Route::resource('/admin', 'HomeController');
 //
 //Route::group(['prefix' => 'admin'], function () {
 //    if (auth()->check()) {
