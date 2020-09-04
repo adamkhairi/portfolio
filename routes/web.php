@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $topWorks = Work::orderBy('rating', 'DESC')->take(3)->get();
-    return view('welcome', compact('topWorks'));
-})->name('index');
 
+//    Get 3top Rating from my Works
+    $topWorks = Work::orderBy('rating', 'DESC')->take(3)->get();
+
+    return view('welcome', compact('topWorks'));
+
+})->name('index');
 
 
 Auth::routes();
@@ -27,8 +30,38 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+//   ADMIN
+
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+//
+//Route::group(['prefix' => 'admin'], function () {
+//    if (auth()->check()) {
+////        /Formation
+//        Route::post('/', 'FormationsController@store');
+//        Route::get('/', 'FormationsController@update');
+//        Route::get('/', 'FormationsController@destroy');
+////        /Work
+//        Route::post('/', 'WorksController@store');
+//        Route::get('/', 'WorksController@update');
+//        Route::get('/', 'WorksController@destroy');
+////        /Experience
+//        Route::post('/', 'ExperiencesController@store');
+//        Route::get('/', 'ExperiencesController@update');
+//        Route::get('/', 'ExperiencesController@destroy');
+//
+//
+//    } else {
+//
+//        return redirect()->to('login');
+//    }
+//});
+
 
 // / Certificate / Formation
+
+
 Route::get('/formations', function () {
     return view('formation.formations');
 })->name('formation');
@@ -43,7 +76,8 @@ Route::resource('/formations', 'FormationsController')->names([
 ]);
 
 // / Work
-Route::get('/works',function (){
+
+Route::get('/works', function () {
     return view('work.works');
 })->name('works');
 
@@ -54,3 +88,4 @@ Route::resource('/works', 'WorksController')->names([
     'edit' => 'work.edit',
     'destroy' => 'work.destroy'
 ]);
+

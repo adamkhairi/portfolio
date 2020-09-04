@@ -33,23 +33,11 @@
                 <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">
                     {{ $work->name }}
                 </a>
-                <a href="#" class="text-sm pb-8">
-                    By <a href="#" class="font-semibold hover:text-gray-800">David Grzyb</a>, Published on April 25th,
-                    2020
-                </a>
-                <h1 class="text-2xl font-bold pb-3">Introduction</h1>
-                <p class="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel neque non libero
-                    suscipit suscipit eu eu urna. Proin bibendum urna mattis ante malesuada ultrices. Etiam in turpis
-                    vitae
-                    elit dictum aliquet. Donec mattis risus in turpis dapibus, eget tempus sem tincidunt. Orci varius
-                    natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In est enim, imperdiet
-                    sed
-                    ornare quis, pellentesque vel risus. Nunc vitae vestibulum turpis. Quisque eget eleifend urna. Etiam
-                    et
-                    vulputate purus, ut egestas sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                    posuere cubilia Curae; Duis quis neque non urna venenatis mollis et at massa. Pellentesque sem
-                    lacus,
-                    malesuada vel hendrerit molestie, mollis vel elit.</p>
+
+                <h1 class="text-2xl font-bold pb-3">Description</h1>
+                <p class="pb-3">
+                    {{ $work->description }}
+                </p>
 
             </div>
         </article>

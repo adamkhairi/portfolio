@@ -46,17 +46,19 @@ class FormationsController extends Controller
     {
         $this->validate($request, [
             'certificate' => 'required',
+            'school' => 'required',
             'obtained' => 'required',
             'description' => 'required',
         ]);
 
         $formation = new Formation();
         $formation->certificate = $request->certificate;
+        $formation->school = $request->school;
         $formation->obtained = $request->obtained;
         $formation->description = $request->description;
 
         $formation->save();
-        return redirect('index')->with('success', 'Formation Added Successfuly');
+        return redirect('/formations')->with('success', 'Formation Added Successfuly');
 
     }
 
@@ -105,5 +107,10 @@ class FormationsController extends Controller
         $formation->delete();
 
         return redirect('formations.index')->with('success', 'Formation deleted successfully');
+    }
+    public function adminIndex()
+    {
+        $formations = Formation::all();
+        return view('admin.dashboard', compact('formations'));
     }
 }

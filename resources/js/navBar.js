@@ -14,12 +14,7 @@ $(function () {
     let navbar = $('#navbar');
 
     $(window).scroll(function () {
-        if ($(window).scrollTop() <= 20) {
-
-            navbar.addClass('bg-gray-800');
-            navbar.addClass('shadow-lg');
-
-        }else if($(window).scrollTop() <= 650){
+        if($(window).scrollTop() <= 150){
             navbar.removeClass('bg-gray-800');
             navbar.removeClass('shadow-lg');
         } else {

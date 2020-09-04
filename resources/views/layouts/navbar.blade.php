@@ -1,4 +1,4 @@
-<nav id="navbar" class="flex justify-between items-center bg-gray-800 py-4 px-16 fixed top-0 w-full z-40">
+<nav id="navbar" class="flex justify-between items-center bg-transparent py-4 px-16 fixed top-0 w-full z-40">
     <a href="{{ route('index') }}">
         <div class="flex justify-center items-center">
             <img src="/img/user-profile.png" width="50" alt="USER img">
@@ -17,7 +17,7 @@
         <a href="{{route('index')}}#about" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">About</a>
         <a href="{{ url('/formations') }}" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Certificats</a>
         <a href="{{route('index')}}#experiences" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Experience</a>
-        <a href="{{ url('/works') }}" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Work</a>
+        <a href="{{ url('/works') }}" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Portfolio</a>
         <a href="{{ url('/contact') }}" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Contact</a>
     </div>
 </div>
