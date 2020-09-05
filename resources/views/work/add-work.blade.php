@@ -35,6 +35,25 @@
                                 </div>
 
                                 <div class="py-1">
+                                    <label for="category" class="px-1 text-sm text-gray-600">Category</label>
+                                    <select name="category_id" id="category"
+                                            class="text-md block px-3 py-2 rounded-lg w-full
+                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                                        <option value="1">Category_1</option>
+                                        <option value="2">Category_2</option>
+                                        <option value="3">Category_3</option>
+                                        <option value="3">Category_4</option>
+                                    </select>
+                                </div>
+
+                                <div class="py-1">
+                                    <label for="rating" class="px-1 text-sm text-gray-600">Rating</label>
+                                    <input type="number" name="rating" id="rating"
+                                            class="text-md block px-3 py-2 rounded-lg w-full
+                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none" min="1" max="10">
+                                </div>
+
+                                <div class="py-1">
                                     <label for="img" class="px-1 text-sm text-gray-600">Image</label>
                                     <input placeholder="" type="file" name="img" id="img"
                                            class="text-md block px-3 py-2 rounded-lg w-full

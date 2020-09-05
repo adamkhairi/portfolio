@@ -69,12 +69,13 @@ class WorksController extends Controller
         $work = new Work();
         $work->name = $request->name;
         $work->img = $name;
-        $work->description = $request->descriptione;
+        $work->description = $request->description;
+        $work->category_id = $request->category_id;
         $work->rating = $request->rating;
 
         $work->save();
 
-        return redirect('index')->with('Success', 'Work has been added');
+        return redirect('/works')->with('Success', 'Work has been added');
     }
 
     /**
