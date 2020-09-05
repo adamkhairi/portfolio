@@ -1,5 +1,6 @@
 <?php
 
+use App\Formation;
 use App\Work;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -19,8 +20,8 @@ Route::get('/', function () {
 
 //    Get 3top Rating from my Works
     $topWorks = Work::orderBy('rating', 'DESC')->take(3)->get();
-
-    return view('welcome', compact('topWorks'));
+$formationHome = Formation::take(3)->get();
+    return view('welcome', compact('topWorks','formationHome'));
 
 })->name('index');
 
@@ -35,7 +36,14 @@ Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/admin', function () {
     return view('admin.dashboard');
 });
-Route::resource('/admin', 'HomeController');
+
+
+Route::resource('/admin', 'HomeController')->names([
+    'fIndex' => 'formationD.index',
+    'fEdit' => 'formationD.edit',
+    'fUpdate' => 'formationD.update',
+    'fDestroy' => 'formationD.destroy'
+]);
 //
 //Route::group(['prefix' => 'admin'], function () {
 //    if (auth()->check()) {
@@ -76,6 +84,11 @@ Route::resource('/formations', 'FormationsController')->names([
     'destroy' => 'formation.destroy'
 ]);
 
+Route::post('formations/{id}/edit',[
+   'uses'=>'FormationsController@update',
+   'as' => 'formation.update'
+
+]);
 // / Work
 
 Route::get('/works', function () {

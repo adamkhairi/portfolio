@@ -7,8 +7,27 @@
 
 @section('content1')
     <div class="pt-20"></div>
-    <section class="min-h-screen flex justify-center items-center">
+    <section class="min-h-screen flex flex-col justify-center items-center">
+        @auth()
+            <div class="text-center text-white text-xl ">
 
+                <form action="{{ route('work.destroy',$work->id)}}" method="POST"
+                      enctype="multipart/form-data" class="flex w-full justify-center items-center ">
+
+                    <a href="{{ route('work.edit', $work->id) }}"
+                       type="button" class=" px-3 py-1 rounded bg-blue-600 hover:opacity-75 hover:shadow shadow-lg">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+
+                    @csrf
+                    {{ method_field('DELETE') }}
+                    <button type="submit"
+                            class="px-3 py-1 rounded bg-red-600 ml-2 hover:opacity-75 hover:shadow shadow-lg">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </form>
+            </div>
+        @endauth
         <article class="flex flex-col shadow my-4 min-h-full">
 
             <a href="{{ route('work.index')  }}" class=" fixed left-0 m-3 bottom-0 hover:opacity-100">
@@ -40,6 +59,7 @@
                 </p>
 
             </div>
+
         </article>
     </section>
 

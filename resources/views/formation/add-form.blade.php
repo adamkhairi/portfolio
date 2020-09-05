@@ -34,7 +34,7 @@
                                           class="text-md block px-3 py-2 rounded-lg w-full
                 bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"></textarea>
                             </div>
-                            <button class="mt-3 text-lg font-semibold
+                            <button type="submit" class="mt-3 text-lg font-semibold
             bg-gray-800 w-full text-white rounded-lg
             px-6 py-3 block shadow-xl hover:text-white hover:bg-black">
                                 SAVE
@@ -42,15 +42,6 @@
                         </div>
                     </form>
 
-                    <div class="text-sm font-semibold block sm:hidden py-6 flex justify-center">
-                        <a href="#"
-                           class="text-black font-normal border-b-2 border-gray-200 hover:border-teal-500">You're
-                            already member?
-                            <span class="text-black font-semibold">
-            Login
-          </span>
-                        </a>
-                    </div>
 
                 </div>
             </div>

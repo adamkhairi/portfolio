@@ -27,13 +27,9 @@ class WorksController extends Controller
 //        return view('work.works', compact('works', 'topWorks'));
 
         $works = Work::latest()->paginate(6);
-        view('admin.dashboard' ,compact('works'));
+        view('admin.dashboard', compact('works'));
         return view('work.works', compact('works'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
-
-
-
-
 
 
     /**
@@ -57,18 +53,17 @@ class WorksController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max=200',
+            'name' => 'required|string',
             'img' => 'required',
             'description' => 'required',
-            'rating' => 'required',
-            'category_id' => 'nullable'
+
         ]);
         if ($request->hasFile('img')) {
             $img = $request->file('img');
             $name = $img->getClientOriginalName();
             $img->move(public_path() . '/img/', $name);
             $name = '/img/' . $name;
-
+//            dd($name);
         }
 
         $work = new Work();

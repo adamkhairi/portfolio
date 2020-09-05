@@ -7,7 +7,7 @@
 
 {{--/ Formations--}}
 @section('content1')
-    <section class="py-6 w-full min-h-screen">
+    <section class="pt-6 w-full min-h-screen">
 
         <div class="py-16">
             <h1 class="text-5xl pt-12 text-center text-white font-extrabold"> Certificats </h1>
@@ -18,9 +18,9 @@
                 <div class="max-w-5xl mx-auto p-8 py-24 flex flex-wrap justify-start items-center">
                     <div class="flex-1">
                         <h2 class="font-display-italic font-extrabold text-3xl md:text-4xl  italic leading-none mb-12">
-                            {{ $formation->certificate }}</h2>
+                            {{ $formation->certificate }}.</h2>
                         <p class="text-gray-500">
-                            {{ $formation->obtained }}, {{ $formation->school }}
+                            {{ $formation->obtained }}, {{ $formation->school }}.
                         </p>
                     </div>
                     <div class="w-full lg:w-72 text-gray-500">
@@ -28,6 +28,26 @@
                             {{ $formation->description }}
                         </p>
                     </div>
+
+                    @auth()
+                        <div class="text-center text-white text-xl ">
+
+                            <form action="{{ route('formation.destroy',$formation->id)}}" method="POST"
+                                  enctype="multipart/form-data" class="flex w-full justify-center items-center ">
+
+                                    <a href="{{ route('formation.edit', $formation->id) }}"
+                                      type="button" class=" px-3 py-1 rounded bg-blue-600 hover:opacity-75 hover:shadow shadow-lg">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="px-3 py-1 rounded bg-red-600 ml-2 hover:opacity-75 hover:shadow shadow-lg">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </div>
+                    @endauth
                 </div>
                 <hr class="bg-gray-800 w-full h-1">
             </div>

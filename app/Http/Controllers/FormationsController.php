@@ -24,6 +24,10 @@ class FormationsController extends Controller
         $formations = Formation::all();
         return view('formation.formations', compact('formations'));
     }
+    public function getFormation(){
+        $formationHome = Formation::latest(3);
+        return view('welcome',compact('formationHome'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -71,7 +75,7 @@ class FormationsController extends Controller
     public function edit($id)
     {
         $formation = Formation::findOrFail($id);
-        return view('formation.update-form', compact('formation'));
+        return view('/formation.update-form', compact('formation'));
     }
 
     /**
@@ -106,7 +110,7 @@ class FormationsController extends Controller
 
         $formation->delete();
 
-        return redirect('formations.index')->with('success', 'Formation deleted successfully');
+        return redirect('formations')->with('success', 'Formation deleted successfully');
     }
 
 }

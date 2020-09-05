@@ -60,7 +60,8 @@
             <div class="bg-black md:block w-3/12"></div>
             <div class="flex-1 relative">
                 <h2 class="mb-8 uppercase text-white text-2xl font-bold tracking-widest">My Certificate</h2>
-                <p class="font-serif text-gray-500 text-base md:text-xl max-w-2xl leading-loose">Lorem ipsum dolor sit amet,
+                <p class="font-serif text-gray-500 text-base md:text-xl max-w-2xl leading-loose">Lorem ipsum dolor sit
+                    amet,
                     consectetur adipisicing elit. Accusamus adipisci aut eos iusto nemo sint?</p>
 
                 <span class="absolute top-0 left-0 w-4 h-full bg-gray-300 -ml-20"></span>
@@ -78,20 +79,20 @@
 
             <div class="mx-auto max-w-5xl flex flex-wrap justify-center items-center text-center py-20">
 
-                <a href="#" class="w-full md:w-1/3 px-12">
-                    <h4 class="mb-2 uppercase text-gray-100 text-lg font-bold tracking-widest">Investment Options</h4>
-                    <p class="text-sm md:text-lg font-serif text-gray-400">Get More</p>
-                </a>
 
-                <a href="#" class="w-full md:w-1/3 py-12 px-12 md:border-l-4 md:border-r-4 md:border-gray-700">
-                    <h4 class="mb-2 uppercase text-gray-100 text-lg font-bold tracking-widest">Accomodation</h4>
-                    <p class="text-sm md:text-lg font-serif text-gray-400">Future Tenants</p>
-                </a>
+                @foreach($formationHome as $formation)
 
-                <a href="#" class="w-full md:w-1/3 px-12">
-                    <h4 class="mb-2 uppercase text-gray-100 text-lg font-bold tracking-widest">Land Development</h4>
-                    <p class="text-sm md:text-lg font-serif text-gray-400">The Homes</p>
-                </a>
+                    <a href="#" class="w-full md:w-1/3 px-12 md:border-l-4 md:border-r-4 md:border-gray-700">
+                        <h4 class="mb-2 uppercase text-gray-100 text-lg font-bold tracking-widest">
+                            {{ $formation->certificate }}
+                        </h4>
+                        <p class="text-sm md:text-lg font-serif text-gray-400">
+                            {{ $formation->school }}
+                        </p>
+                    </a>
+
+                @endforeach
+
 
             </div>
 
@@ -106,7 +107,17 @@
 
 <!-- / SPACER -->
 
+<!-- / About -->
 
+@section('content4')
+
+@endsection
+
+
+
+<!-- / SPACER -->
+
+<!-- / SPACER -->
 <!-- FOOTER / -->
 @section('footer')
     @include('layouts.footer')
