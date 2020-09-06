@@ -44,28 +44,8 @@ Route::resource('/admin', 'HomeController')->names([
     'fUpdate' => 'formationD.update',
     'fDestroy' => 'formationD.destroy'
 ]);
-//
-//Route::group(['prefix' => 'admin'], function () {
-//    if (auth()->check()) {
-////        /Formation
-//        Route::post('/', 'FormationsController@store');
-//        Route::get('/', 'FormationsController@update');
-//        Route::get('/', 'FormationsController@destroy');
-////        /Work
-//        Route::post('/', 'WorksController@store');
-//        Route::get('/', 'WorksController@update');
-//        Route::get('/', 'WorksController@destroy');
-////        /Experience
-//        Route::post('/', 'ExperiencesController@store');
-//        Route::get('/', 'ExperiencesController@update');
-//        Route::get('/', 'ExperiencesController@destroy');
-//
-//
-//    } else {
-//
-//        return redirect()->to('login');
-//    }
-//});
+
+
 
 
 // / Certificate / Formation
@@ -101,5 +81,19 @@ Route::resource('/works', 'WorksController')->names([
     'update' => 'work.update',
     'edit' => 'work.edit',
     'destroy' => 'work.destroy'
+]);
+
+// / Experience
+
+Route::get('/experiences', function () {
+    return view('experience.experiences');
+})->name('experiences');
+
+Route::resource('/experiences', 'ExperiencesController')->names([
+    'index' => 'experiences.index',
+    'create' => 'experiences.create',
+    'update' => 'experiences.update',
+    'edit' => 'experiences.edit',
+    'destroy' => 'experiences.destroy'
 ]);
 

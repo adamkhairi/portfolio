@@ -39,10 +39,10 @@
                                     <select name="category_id" id="category"
                                             class="text-md block px-3 py-2 rounded-lg w-full
                 bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
-                                        <option value="1">Category_1</option>
-                                        <option value="2">Category_2</option>
-                                        <option value="3">Category_3</option>
-                                        <option value="3">Category_4</option>
+                                        <option value="1">Web Site</option>
+                                        <option value="2">Application</option>
+                                        <option value="3">Design</option>
+                                        <option value="3">Other</option>
                                     </select>
                                 </div>
 
