@@ -16,22 +16,24 @@
                         <h1 class="text-3xl  font-extrabold text-center font-base text-black">
                             Update Experience
                         </h1>
-                        <form class="mt-8" method="POST" action="{{route('experiences.store')}}"
+                        <form class="mt-8" method="POST" action="{{route('experiences.store',$exper->id)}}"
                               enctype="multipart/form-data">
                             <div class="mx-auto max-w-lg ">
                                 <div class="py-1">
                                     <label for="company" class="px-1 text-sm text-gray-600">Company</label>
                                     <input placeholder="Company" type="text" name="company" id="company"
                                            class="text-md block px-3 py-2 rounded-lg w-full
-                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none" value="{{ $exper->company }}"
+                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
+                                           value="{{ $exper->company }}"
                                     >
                                     @csrf
                                 </div>
                                 <div class="py-1">
                                     <label for="description" class="px-1 text-sm text-gray-600">Description</label>
                                     <textarea placeholder="" name="description" id="description"
-                                           class="text-md block px-3 py-2 rounded-lg w-full
-                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none" value="{{ $exper->description }}"
+                                              class="text-md block px-3 py-2 rounded-lg w-full
+                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
+                                              value="{{ $exper->description }}"
                                     ></textarea>
                                 </div>
 
@@ -39,7 +41,8 @@
                                     <label for="post" class="px-1 text-sm text-gray-600">Post</label>
                                     <input placeholder="" type="text" name="post" id="post"
                                            class="text-md block px-3 py-2 rounded-lg w-full
-                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none" value="{{ $exper->post }}"
+                bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
+                                           value="{{ $exper->post }}"
                                     >
                                 </div>
 
