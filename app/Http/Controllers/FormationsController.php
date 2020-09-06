@@ -90,12 +90,13 @@ class FormationsController extends Controller
         $formation = Formation::findOrFail($id);
 
         $formation->certificate = $request->certificate;
+        $formation->school = $request->school;
         $formation->obtained = $request->obtained;
         $formation->description = $request->description;
 
         $formation->save();
 
-        return redirect()->back()->with('success', 'Formation has been updated');
+        return redirect('formations')->with('success', 'Formation has been updated');
     }
 
     /**
