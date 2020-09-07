@@ -24,42 +24,83 @@
 
                         <div class="flex items-center" id="store-nav-content">
                             @auth()
-                                <a class="pl-3 inline-block no-underline hover:text-black" href="{{ route('work.create') }}">
+                                <a class="pl-3 inline-block no-underline hover:text-black"
+                                   href="{{ route('work.create') }}">
                                     Add New
                                 </a>
                             @endauth
 
-                                <a class="pl-3 inline-block no-underline hover:text-black" href="#">
-                                    <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg"
-                                         width="24"
-                                         height="24" viewBox="0 0 24 24">
-                                        <path
-                                            d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"/>
-                                    </svg>
-                                </a>
+                            <a class="pl-3 inline-block no-underline hover:text-black" href="#">
+                                <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg"
+                                     width="24"
+                                     height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"/>
+                                </svg>
+                            </a>
 
                         </div>
                     </div>
                 </nav>
+                <div class="flex flex-wrap -mx-1 lg:-mx-4">
 
-                @foreach($works as $work)
 
-                    <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col tracking-wide">
-                        <a href="{{ route('works.show', $work->id) }}">
-                            <img class="hover:grow hover:shadow-lg"
-                                 src="{{ $work->img }}">
-                            <div class="pt-3 flex items-center justify-between">
-                                <p class="">{{ $work->name }}</p>
+                    @foreach($works as $work)
+                        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 ">
 
-                            </div>
-                            <p class="pt-1 text-gray-900">
-                                {{ $work->description }}
-                            </p>
-                        </a>
-                    </div>
+                            {{--                    <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col tracking-wide">--}}
+                            {{--                        <a href="{{ route('works.show', $work->id) }}">--}}
+                            {{--                            <img class="hover:grow hover:shadow-lg"--}}
+                            {{--                                 src="{{ $work->img }}">--}}
+                            {{--                            <div class="pt-3 flex items-center justify-between">--}}
+                            {{--                                <p class="">{{ $work->name }}</p>--}}
 
-                @endforeach
+                            {{--                            </div>--}}
+                            {{--                            <p class="pt-1 text-gray-900">--}}
+                            {{--                                {{ $work->description }}--}}
+                            {{--                            </p>--}}
+                            {{--                        </a>--}}
+                            {{--                    </div>--}}
 
+                            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                                <a href="{{ route('works.show', $work->id) }}">
+                                    <img alt="Placeholder" class="block h-auto w-full"
+                                         src="{{ $work->img }}">
+                                </a>
+
+                                <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+                                    <h1 class="text-lg">
+                                        <a class="no-underline hover:underline text-black"
+                                           href="{{ route('works.show', $work->id) }}">
+                                            {{ $work->name }}
+                                        </a>
+                                    </h1>
+                                    <p class="text-grey-darker text-sm">
+                                        11/1/19
+                                    </p>
+                                </header>
+
+                                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                                    <a class="flex items-center no-underline hover:underline text-black"
+                                       href="{{ route('works.show', $work->id) }}">
+                                        <img alt="Placeholder" class="block rounded-full"
+                                             src="https://picsum.photos/32/32/?random">
+                                        <p class="ml-2 text-sm">
+                                            {{$work->description}}
+                                        </p>
+                                    </a>
+                                    <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
+                                        <span class="hidden">Like</span>{{ $work->rating }}
+                                        <i class="fa fa-heart"></i>
+                                    </a>
+                                </footer>
+
+                            </article>
+
+                        </div>
+                    @endforeach
+                </div>
 
             </div>
 

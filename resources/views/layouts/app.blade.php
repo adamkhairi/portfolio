@@ -21,7 +21,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
 </head>
-<body class="min-h-screen antialiased leading-none">
+<body class="min-h-screen antialiased">
 {{--    <div id="app">--}}
 {{--        <nav class="bg-blue-900 shadow mb-8 py-6">--}}
 {{--            <div class="container mx-auto px-6 md:px-0">--}}
