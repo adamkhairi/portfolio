@@ -6,7 +6,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -14,9 +15,9 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-
     <!-- Styles -->
-{{--    <link rel="stylesheet" type="text/css" href="slick/slick.css">--}}
+    {{--    <link rel="stylesheet" type="text/css" href="slick/slick.css">--}}
+    <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet"/>
     <link href="css/splide.min.css" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
@@ -76,10 +77,10 @@
 {{--<script type="text/javascript" src="slick/slick.min.js"></script>--}}
 <script type="text/javascript" src="js/splide.min.js"></script>
 
-    <script src="{{ asset('js/navBar.js') }}" defer></script>
+<script src="{{ asset('js/navBar.js') }}" defer></script>
 
-
-
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js" defer></script>
+<script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
 @yield('script')
 </body>
 </html>
