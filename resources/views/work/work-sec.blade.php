@@ -21,8 +21,8 @@
     <!-- / SPACER -->
     @foreach($topWorks as $work)
 
-        <div class="w-full flex items-center justify-start relative  my-2">
-            <div class="w-auto md:w-3/12 bg-gray-700 hidden md:flex">
+        <div class="w-full flex items-center justify-center relative  my-2">
+            <div class="w-auto md:w-1/12 hidden md:flex">
                 <div class="p-6"></div>
             </div>
 
