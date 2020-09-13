@@ -50,10 +50,10 @@ class ExperiencesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'company' => 'require',
-            'logo' => 'require',
-            'post' => 'require',
-            'description' => 'require',
+            'company' => 'required',
+            'logo' => 'required',
+            'post' => 'required',
+            'description' => 'required',
         ]);
 
         if ($request->hasFile('logo')) {

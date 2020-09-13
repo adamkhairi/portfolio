@@ -3,7 +3,7 @@
 @section('header')
     @include('layouts.navbar')
 @endsection
-
+@section('title','Works - Page')
 
 @section('content')
     <div class="p-16"></div>

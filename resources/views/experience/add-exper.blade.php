@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Add experience - Page')
 
 @section('header')
     @include('layouts.navbar')

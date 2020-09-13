@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Login - Page')
 @section('content')
     <div class="p-16"></div>
     <div class="container mx-auto">
