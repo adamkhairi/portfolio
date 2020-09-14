@@ -73,7 +73,7 @@ class ExperiencesController extends Controller
 
         $exper->save();
 
-        return redirect('/experiences')->with('Success', 'Experience has been added');
+        return redirect('/experiences')->with('success', 'Experience has been added');
     }
 
     /**
@@ -84,7 +84,7 @@ class ExperiencesController extends Controller
      */
     public function show($id)
     {
-        $exper = Experience::findOdFail($id);
+        $exper = Experience::findOrFail($id);
         return view('experience.show-exper', compact('exper'));
     }
 
@@ -96,7 +96,7 @@ class ExperiencesController extends Controller
      */
     public function edit($id)
     {
-        $exper = Experience::findOdFail($id);
+        $exper = Experience::findOrFail($id);
         return view('experience.update-exper', compact('exper'));
     }
 
@@ -128,7 +128,7 @@ class ExperiencesController extends Controller
 
         $exper->save();
 
-        return redirect('/experiences')->with('Success', 'Experience has been updated');
+        return redirect('/experiences')->with('success', 'Experience has been updated');
     }
 
 
@@ -142,7 +142,7 @@ class ExperiencesController extends Controller
     {
         $exper = Experience::findOrFail($id);
         $exper->delete();
-        return redirect('/experiences')->with('Success', 'Experience has been deleted');
+        return redirect('/experiences')->with('success', 'Experience has been deleted');
 
 
     }

@@ -11,6 +11,12 @@
     <div class="h-32 bg-gray-800"></div>
 
     <section class="blog body-font">
+        <div class="text-center py-2">
+            <a href="{{ route('experiences.create') }}"
+               type="button" class=" px-3 py-1 rounded bg-blue-600 hover:opacity-75 hover:shadow shadow-lg">
+                <i class="fas fa-plus"></i> Add New
+            </a>
+        </div>
         <!-- Experience -->
         <div class="my-10">
             <h2 class="uppercase text-sm font-semibold text-center text-4xl text-gray-700">Experiences</h2>
@@ -36,6 +42,28 @@
 
                         </div>
                     </div>
+                    @auth()
+
+                            <div class="text-center text-white pb-10">
+
+                                <form action="{{ route('experiences.destroy',$item->id)}}" method="POST"
+                                      enctype="multipart/form-data" class="flex w-full justify-center items-center ">
+
+                                    <a href="{{ route('experiences.edit', $item->id) }}"
+                                       type="button" class=" px-3 py-1 rounded bg-blue-600 hover:opacity-75 hover:shadow shadow-lg">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+
+                                    @csrf
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit" class="px-3 py-1 rounded bg-red-600 ml-2 hover:opacity-75 hover:shadow shadow-lg">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                                <hr class="w-1/3 mt-1 mx-auto rounded-lg bg-gray-800">
+                            </div>
+
+                    @endauth
                 @endforeach
             </div>
         </div>

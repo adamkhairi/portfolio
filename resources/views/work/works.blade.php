@@ -28,9 +28,13 @@
 
                             <div class="flex items-center" id="store-nav-content">
                                 @auth()
-                                    <a class="pl-3 inline-block no-underline hover:text-black"
-                                       href="{{ route('work.create') }}">
-                                        Add New
+{{--                                    <a class="pl-3 inline-block no-underline hover:text-black"--}}
+{{--                                       href="{{ route('work.create') }}">--}}
+{{--                                        Add New--}}
+{{--                                    </a>--}}
+                                    <a href="{{ route('work.create') }}"
+                                       type="button" class="text-white text-sm px-3 py-1 rounded bg-blue-600 hover:opacity-75 hover:shadow shadow-lg">
+                                        <i class="fas fa-plus"></i> Add New
                                     </a>
                                 @endauth
 
@@ -94,8 +98,8 @@
 
                 </div>
                 {{--PAGINATION--}}
-                <div class="bg-gray-200">
-                    {{ $works->links() }}
+                <div class=" font-bold text-center flex justify-center">
+                    {{ $works->links('layouts.pagination') }}
                 </div>
             </section>
 
@@ -113,13 +117,13 @@
                 </a>
             </div>
 
-{{--            <div class="w-full bg-white shadow flex flex-col my-4 p-6">--}}
+            {{--            <div class="w-full bg-white shadow flex flex-col my-4 p-6">--}}
 
-{{--                <a href="#"--}}
-{{--                   class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">--}}
-{{--                    <i class="fab fa-instagram mr-2"></i> Follow @dgrzyb--}}
-{{--                </a>--}}
-{{--            </div>--}}
+            {{--                <a href="#"--}}
+            {{--                   class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">--}}
+            {{--                    <i class="fab fa-instagram mr-2"></i> Follow @dgrzyb--}}
+            {{--                </a>--}}
+            {{--            </div>--}}
 
         </aside>
     </div>

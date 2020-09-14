@@ -1,7 +1,7 @@
 <!--  certificate -->
 
 <!--  SPACER -->
-<section class="blog body-font">
+<section id="certi" class="blog body-font">
 
     <div class="bg-gray-800 px-12 py-24 flex items-center">
         <div class="bg-black md:block w-3/12"></div>

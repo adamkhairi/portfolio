@@ -33,10 +33,15 @@
 <div id="menu"
      class="hidden z-50 opacity-100 text-black bg-gray-400 fixed left-0 right-0 top-0 h-screen w-full flex justify-center items-center">
     <div class="flex flex-col items-center font-extrabold text-4xl justify-center w-full">
-        <a href="{{url('/#about')}}"
-           class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">About</a>
-        <a href="{{ url('/works') }}"
-           class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Work</a>
-        <a href="{{ url('/contact') }}" class="py-3 rounded hover:bg-black hover:text-gray-400 w-2/6 text-center">Contact</a>
+        <a href="{{url('/')}}"
+           class="py-3 rounded {{ Request::is('/') ? 'bg-black text-teal-400' :'hover:bg-black hover:text-gray-400' }}  my-1 w-2/6 text-center">Home</a>
+        <a href="{{ url('/#work') }}"
+           class="py-3 rounded {{ Request::is('works') ? 'bg-black text-teal-400' :'hover:bg-black hover:text-gray-400' }} my-1 w-2/6 text-center">Works</a>
+        <a href="{{ url('/#certi') }}"
+           class="py-3 rounded {{ Request::is('formations') ? 'bg-black text-teal-400' :'hover:bg-black hover:text-gray-400' }} my-1 w-2/6 text-center">Certificates</a>
+        <a href="{{ url('/experiences') }}"
+           class="py-3 rounded {{ Request::is('formations') ? 'bg-black text-teal-400' :'hover:bg-black hover:text-gray-400' }} my-1 w-2/6 text-center">Experiences</a>
+        <a href="{{ url('/contact') }}"
+           class="py-3 rounded {{ Request::is('contact') ? 'bg-black text-teal-400' :'hover:bg-black hover:text-gray-400' }} my-1 w-2/6 text-center">Contact</a>
     </div>
 </div>

@@ -97,6 +97,25 @@ Route::resource('/experiences', 'ExperiencesController')->names([
     'destroy' => 'experiences.destroy'
 ]);
 
+Route::post('experiences/{id}/edit',[
+    'uses'=>'ExperiencesController@update',
+    'as' => 'experiences.update'
+
+]);
+
+
+// / ContactUs
+
+Route::get('/contact', [
+    'uses' => 'ContactUsFormController@createForm'
+]);
+
+Route::post('/contact', [
+    'uses' => 'ContactUsFormController@ContactUsForm',
+    'as' => 'contact.store'
+]);
+
+
 Route::get('/index', function (){
     return view('indexx');
 });

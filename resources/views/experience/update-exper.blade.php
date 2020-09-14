@@ -17,7 +17,7 @@
                         <h1 class="text-3xl  font-extrabold text-center font-base text-black">
                             Update Experience
                         </h1>
-                        <form class="mt-8" method="POST" action="{{route('experiences.store',$exper->id)}}"
+                        <form class="mt-8" method="POST" action="{{route('experiences.update',$exper->id)}}"
                               enctype="multipart/form-data">
                             <div class="mx-auto max-w-lg ">
                                 <div class="py-1">
