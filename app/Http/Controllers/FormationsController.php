@@ -25,7 +25,7 @@ class FormationsController extends Controller
         return view('formation.formations', compact('formations'));
     }
     public function getFormation(){
-        $formationHome = Formation::latest(3);
+        $formationHome = Formation::latest(4);
         return view('welcome',compact('formationHome'));
     }
 

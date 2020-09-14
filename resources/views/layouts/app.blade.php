@@ -22,7 +22,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/main.css') }}" rel="stylesheet">
 </head>
-<body class="min-h-screen antialiased">
+<body class="min-h-screen bg-gray-100 antialiased">
 
 {{-- **  ERRORS  ** --}}
 @include('layouts.errors')

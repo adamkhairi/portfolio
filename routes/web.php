@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
 //    Get 3top Rating from my Works
-    $topWorks = Work::orderBy('rating', 'DESC')->take(3)->get();
+    $topWorks = Work::orderBy('rating', 'DESC')->take(5)->get();
 $formationHome = Formation::take(3)->get();
     return view('welcome', compact('topWorks','formationHome'));
 
@@ -97,3 +97,6 @@ Route::resource('/experiences', 'ExperiencesController')->names([
     'destroy' => 'experiences.destroy'
 ]);
 
+Route::get('/index', function (){
+    return view('indexx');
+});
