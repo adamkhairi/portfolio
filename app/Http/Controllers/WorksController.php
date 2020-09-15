@@ -27,7 +27,6 @@ class WorksController extends Controller
 //        return view('work.works', compact('works', 'topWorks'));
 
         $works = Work::latest()->paginate(6);
-        view('admin.dashboard', compact('works'));
         return view('work.works', compact('works'))->with('i', (request()->input('page', 1) - 1) * 4);
     }
 
