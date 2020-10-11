@@ -103,7 +103,7 @@
                              class="rounded-full shadow h-32 w-32" alt="profil">
                     </div>
                     <div class="flex-1 flex flex-col justify-center md:justify-start">
-                        <p class="font-semibold text-2xl">David</p>
+                        <p class="font-semibold text-2xl">Adam Khairi</p>
                         <p class="pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel neque non
                             libero suscipit suscipit eu eu urna.</p>
                         <div
@@ -145,7 +145,7 @@
                 </div>
 
                 <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-                    <p class="text-xl font-semibold pb-5">Instagram</p>
+                    <p class="text-xl font-semibold pb-5">Picture</p>
                     <div class="grid grid-cols-3 gap-3">
                         <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1"
                              alt="">

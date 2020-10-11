@@ -1,4 +1,5 @@
 <div class="w-full error fixed top-0 z-50 mt-4">
+
     @if ($message = Session::get('success'))
 
         <div class="alert-banner w-1/3 mx-auto my-1">
